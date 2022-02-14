@@ -1,5 +1,8 @@
+// for the input form
 const expenseForm = document.forms["add-expense"];
+// for the table
 const expenseTable = document.querySelector('tbody')
+// for Clear All button
 const clearAll = document.querySelector('.clear-all')
 
 expenseForm.addEventListener("submit", function (e) {
@@ -35,11 +38,25 @@ expenseForm.addEventListener("submit", function (e) {
 
     // clear the inputs
     expenseForm.reset();
+
+    // access button within tdDelete
+    const deleteButton = tdDelete.querySelector('button')
+    deleteButton.classList.add('delete')
 })
 
 clearAll.addEventListener('click', function (e) {
-    // expenseTable.innerHTML = "No expenses added yet"
     var rowCount = document.getElementById('expense-table').rows[0].cells.length
     expenseTable.innerHTML = "<td colspan='" + rowCount + "'>No expenses added yet</td>"
 })
+
+expenseTable.addEventListener('click', function (e) {
+    if(e.target.className === 'delete') {
+        e.target.parentElement.parentElement.remove()
+
+    }
+})
+
+
+
+
 
