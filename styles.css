@@ -1,0 +1,11 @@
+body {
+    /* position the whole body element in the middle of the page horizontally and vertically */
+    width: 25%;
+    margin: 0 auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
